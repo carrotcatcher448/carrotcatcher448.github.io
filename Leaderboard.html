@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/hkz7hzv.css"> <!--for h1 font-->
+    <link href="style2.css" rel="stylesheet">
+    <!--Title-->
+     <title>Carrot Catcher!</title>
+  </head>
+
+  <!--Audio-->
+  <audio id="backgroundAudio" autoplay loop>
+    <source src="Resources/Sounds/leaderboard.wav" type="audio/mpeg">
+  </audio>
+
+  <body>
+    <div class="topNav">
+      <h1 align="center"> Leaderboard </h1>
+    </div>
+
+    <!-- Header -->
+    <div class="leaderboard-box">
+      <div class="flex-container-row">
+        <h1 class = "leaderboard-attr" style="color:#ffffff"> Name </h1>
+        <h1 class = "leaderboard-attr" style="color:#ffffff"> Score </h1>
+        <h1 class = "leaderboard-attr" style="color:#ffffff"> Avatar </h1>
+      </div>
+    </div>
+
+    <!-- High Score 1 -->
+    <div class="leaderboard-box">
+      <div class="flex-container-row">
+        <h1 id = "name1" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <h1 id = "score1" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <img src="Resources/char0.png" class="leaderboard-attr" style="object-fit: contain"</img>
+      </div>
+    </div>
+
+    <!-- High Score 2 -->
+    <div class="leaderboard-box">
+      <div class="flex-container-row">
+        <h1 id = "name2" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <h1 id = "score2" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <img src="Resources/char3.png" class="leaderboard-attr" style="object-fit: contain"</img>
+      </div>
+    </div>
+
+  <!-- High Score 3 -->
+    <div class="leaderboard-box">
+      <div class="flex-container-row">
+        <h1 id = "name3" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <h1 id = "score3" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
+        <img src="Resources/char7.png" class="leaderboard-attr" style="object-fit: contain"</img>
+      </div>
+    </div>
+
+    <div class="bottomNav">
+      <div class="flex-container-row">
+        <a href="index.html"><button type="button" class ="btn btn-primary btn-lg -btn leaderboard-btn"> Main Menu </button></a>
+      </div>
+    </div>
+
+    <!-- Javascript to fill in and update leaderboard -->
+    <script>
+    //Filling in the default values
+    document.getElementById("name1").innerHTML = localStorage.getItem("ldrN1");
+    document.getElementById("score1").innerHTML = localStorage.getItem("ldrS1");
+
+    document.getElementById("name2").innerHTML = localStorage.getItem("ldrN2");
+    document.getElementById("score2").innerHTML = localStorage.getItem("ldrS2");
+
+    document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3");
+    document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3");
+
+    //New highest score or tied
+    if(localStorage.getItem("score") > localStorage.getItem("ldrS1"))
+    {
+      document.getElementById("name2").innerHTML = localStorage.getItem("ldrN1");
+      document.getElementById("score2").innerHTML = localStorage.getItem("ldrS1");
+
+      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN2");
+      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS2");
+
+      localStorage.setItem("ldrN1", localStorage.getItem("name"))
+      localStorage.setItem("ldrS1", localStorage.getItem("score"))
+
+      document.getElementById("name1").innerHTML = localStorage.getItem("ldrN1")
+      document.getElementById("score1").innerHTML = localStorage.getItem("ldrS1")
+    }
+    //New second highest score or tied
+    else if(localStorage.getItem("score") > localStorage.getItem("ldrS2"))
+    {
+      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN2");
+      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS2");
+
+      localStorage.setItem("ldrN2", localStorage.getItem("name"))
+      localStorage.setItem("ldrS2", localStorage.getItem("score"))
+
+      document.getElementById("name2").innerHTML = localStorage.getItem("ldrN2")
+      document.getElementById("score2").innerHTML = localStorage.getItem("ldrS2")
+    }
+    //New third highest score or tied
+    else if(localStorage.getItem("score") > localStorage.getItem("ldrS3"))
+    {
+      localStorage.setItem("ldrN3", localStorage.getItem("name"))
+      localStorage.setItem("ldrS3", localStorage.getItem("score"))
+
+      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3")
+      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3")
+    }
+  </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS , then Font fontawesome-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="\Scripts\js2.js"></script>
+  </body>
+</html>

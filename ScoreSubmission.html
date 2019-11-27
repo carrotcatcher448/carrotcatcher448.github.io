@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/hkz7hzv.css"> <!--for h1 font-->
+    <link href="style2.css" rel="stylesheet">
+    <!--Title-->
+     <title>Carrot Catcher!</title>
+  </head>
+
+  <body>
+    <div class ="score-container">
+      <div class="flex-container-column">
+        <h1>Submit Score</h1>
+      </div>
+    </div>
+
+    <div class ="input-container">
+      <div class="flex-container-column">
+        <h2 id = "score"> Score: </h2>
+        <h2 id="num"></h2>
+        <div class="flex-container-row">
+          <h1 id = "name"> Name: </h1>
+          <input type ="text" id = "playerName" name = "playerName">
+        </div>
+      </div>
+    </div>
+
+    <div class ="submit-container">
+      <div class="flex-container-column">
+      <input type = "button" onclick="submitScore()" value ="Submit Score">
+      </div>
+    </div>
+  <script>document.getElementById("num").innerHTML = localStorage.getItem("score");</script>
+  <script>
+    var b = sessionStorage.getItem("gamebackground");
+     if (sessionStorage.length == 0) {
+       document.body.style.backgroundImage = "url('/Resources/background.jpg')";
+     }
+     else{
+       document.body.style.backgroundImage = "url('"+ b + "')";
+     }
+  </script>
+  <script src="Scripts/js2.js"></script>
+
+
+    <!-- <div class="bottomNav">
+      <div class="flex-container-row">
+        <a href="Leaderboard.html"><button type="button" class ="btn btn-primary btn-lg -btn leaderboard-btn"> Submit Score </button></a>
+      </div>
+    </div> -->
+
+  <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+body {
+  padding-top: 5rem;
+  background: no-repeat center center fixed;
+  /* background: url('Resources/background.jpg') no-repeat center center fixed; */
+  background-size: cover;
+  position: relative;
+}
+
+h1 {
+  font-family: showcard-gothic, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #FF5700;
+  text-shadow: 1.5px 1.5px 5px #969696;
+  letter-spacing: 0.1em;
+  word-spacing: 0.4em;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.topNav {
+  position: absolute;
+  top: -100px;
+  position: relative;
+}
+
+.navLeft {
+  float: left;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.navLeft i {
+  margin: 10px;
+}
+
+.navRight {
+  float: right;
+  margin-top: 0px;
+  margin-right: 20px;
+}
+
+.navRight i {
+  padding: 10px;
+}
+
+.bottomNav {
+  position: fixed;
+  left: 100px;
+  right: 100px;
+  bottom: 10px;
+  /*position: relative;*/
+}
+
+.title {
+  margin-top: 100px;
+}
+
+.btn {
+  background-color: #044444;
+  border: none;
+}
+
+.play-btn {
+  /*border-radius: 30%;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 10px 50px 10px 50px;
+}
+
+.level-btn {
+  width: 150px;
+  margin: 50px;
+}
+
+/* LEADERBOARD PAGE */
+.leaderboard-btn {
+  width: 250px;
+  margin: 50px;
+}
+
+.leaderboard-attr {
+  width: 150px;
+  height: 50px;
+  /*max-width: 100%;
+  max-height: 100%;*/
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.leaderboard-box {
+  margin-left: 175px;
+  margin-right: 175px;
+  margin-bottom: 25px;
+  background-color: #717171;
+  opacity: 0.55;
+  filter: alpha(opacity=55);
+}
+
+
+/** */
+
+.icon {
+  font-size: 2em; /*font awesome icons are sized by font-size*/
+  color: #044444;
+  filter: drop-shadow(0 0 0.75rem white);
+}
+
+/* LANDING PAGE */
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: static;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: auto;
+  width: 50%;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.bunny {
+  width: 100px;
+  bottom: 100px;
+}
+
+.helpImage {
+  width: 30%;
+}
+
+/* Popup box BEGIN */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  width: 30%; /* Could be more or less, depending on screen size */
+  font-size: 2em;
+}
+
+.modal-content h1 {
+  margin-top: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.modal-content p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.5em;
+}
+
+.modal-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* score submission page */
+.score-container{
+  position: relative;
+  margin: auto;
+  width: 60%;
+  height:200%;
+  border: none;
+  padding: 10px;
+}
+
+.input-container{
+  background-color: #3C6B6E;
+  color: white;
+  padding-top: 50px;
+  position: relative;
+  margin: auto;
+  width: 35%;
+  height: 60%;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+input[type=text] {
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+
+input[type=button] {
+  border-radius: 10px;
+  color: white;
+  border: none;
+  padding: 10px;
+  background-color:#3C6B6E;
+  margin-top: 30px;
+}
+
+
+/* cosmetics options page  */
+.background-container{
+  margin-top: 60px;
+}
+
+
+#output{
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  font-size: 22px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/*Container for avatars*/
+.avatarcontainer{
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#currentChar{
+  width: 275px;
+}
+
+#prevChar{
+  height: 5%;
+}
+
+body{
+  margin:50px;
+}
+
+/* Next char button */
+a.nextChar {
+  height:50px;
+    line-height:50px;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 25px;
+    color:#ffffff;
+    background-color:#fcaaaa;
+    position:relative;
+    display:inline-block;
+}
+
+a.nextChar:after{
+  position:absolute;
+  right:-20px;
+  content:" ";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 25px 0 25px 20px;
+  border-color: transparent transparent transparent #fcaaaa;
+}
+
+/* Prev char button */
+a.prevChar:before{
+  position:absolute;
+  left:-20px;
+  content:" ";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 25px 20px 25px 0;
+  border-color: transparent #fcaaaa transparent transparent ;
+}
+
+a.prevChar {
+  height:50px;
+    line-height:50px;
+    vertical-align:middle;
+    text-align:center;
+    padding:0 25px;
+    color:#ffffff;
+    background-color:#fcaaaa;
+    position:relative;
+    display:inline-block;
+
+}
