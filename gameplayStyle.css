@@ -7,6 +7,52 @@ body {
 
 }
 
+h1 {
+  font-family: showcard-gothic, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #FF5700;
+  text-shadow: 1.5px 1.5px 5px #969696;
+  letter-spacing: 0.1em;
+  word-spacing: 0.4em;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .topNav {
   position: absolute;
   top: -60px;
@@ -40,6 +86,74 @@ body {
   color: #044444;
 }
 
+.helpImage {
+  width: 30%;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  width: 30%; /* Could be more or less, depending on screen size */
+  font-size: 2em;
+}
+
+.modal-content h1 {
+  margin-top: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.modal-content p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.5em;
+}
+
+.modal-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* */
 
 #container {
@@ -48,12 +162,8 @@ body {
     margin-left: 0%;
     position: relative;
     border: 1px solid red;
-    /* overflow: visible; */
-    /* background-color: #31b6ce;
-    background: url('/Resources/background.jpg') no-repeat center center fixed; */
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-color: #cccccc; */
 }
 
 #score_help {
@@ -123,8 +233,8 @@ body {
     position: absolute;
     bottom: 0px;
     height: 7%;
-    width: 3.5%;
-    background: url('Resources/brokencarrot1.png');
+    width: 7%;
+    background: url('Resources/carrot_miss_small.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 11;
@@ -151,12 +261,20 @@ body {
     z-index: 10;
 }
 
+.avatarcontainer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 #basket {
     height: 100px;
     width: 85px;
     position: absolute;
-    bottom: 5px;
-    background: url('Resources/basket.png');
+    bottom: 0px;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
