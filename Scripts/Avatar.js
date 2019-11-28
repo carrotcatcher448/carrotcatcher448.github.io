@@ -35,7 +35,8 @@ function nextChar() {
     }
   }
   document.getElementById("currentChar").src = img;
-  sessionStorage.setItem("avatar", avatar);
+  //
+  localStorage.setItem("avatar", avatar);
 }
 
 function prevChar() {
@@ -53,5 +54,5 @@ function prevChar() {
     }
   }
   document.getElementById("currentChar").src = img;
-  sessionStorage.setItem("avatar", avatar);
+  localStorage.setItem("avatar", avatar);
 }

@@ -36,7 +36,7 @@
       <div class="flex-container-row">
         <h1 id = "name1" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
         <h1 id = "score1" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
-        <img src="Resources/char0.png" class="leaderboard-attr" style="object-fit: contain"</img>
+        <img id = "char1" src="Resources/carrot_miss_small.png" class="leaderboard-attr" style="object-fit: contain"</img>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
       <div class="flex-container-row">
         <h1 id = "name2" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
         <h1 id = "score2" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
-        <img src="Resources/char3.png" class="leaderboard-attr" style="object-fit: contain"</img>
+        <img id = "char2" src="Resources/carrot_miss.png" class="leaderboard-attr" style="object-fit: contain"</img>
       </div>
     </div>
 
@@ -54,63 +54,129 @@
       <div class="flex-container-row">
         <h1 id = "name3" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
         <h1 id = "score3" class = "leaderboard-attr" style="color:#ffffff"> t </h1>
-        <img src="Resources/char7.png" class="leaderboard-attr" style="object-fit: contain"</img>
+        <img id = "char3" src="Resources/carrot_miss_small.png" class="leaderboard-attr" style="object-fit: contain"</img>
       </div>
     </div>
 
     <div class="bottomNav">
       <div class="flex-container-row">
-        <a href="index.html"><button type="button" class ="btn btn-primary btn-lg -btn leaderboard-btn"> Main Menu </button></a>
+        <a href="LandingPage2.html"><button type="button" class ="btn btn-primary btn-lg -btn leaderboard-btn"> Main Menu </button></a>
       </div>
     </div>
 
     <!-- Javascript to fill in and update leaderboard -->
     <script>
+    //localStorage.clear()
     //Filling in the default values
+    if(localStorage.getItem("ldrN1") == null)
+    {
+      localStorage.setItem("ldrN1", "-")
+    }
+    if(localStorage.getItem("ldrS1") == null)
+    {
+      localStorage.setItem("ldrS1", "0")
+    }
+    //
+    if(localStorage.getItem("ldrC1") == null)
+    {
+      localStorage.setItem("ldrC1", "-")
+    }
+    if(localStorage.getItem("ldrN2") == null)
+    {
+      localStorage.setItem("ldrN2", "-")
+    }
+    if(localStorage.getItem("ldrS2") == null)
+    {
+      localStorage.setItem("ldrS2", "0")
+    }
+    //
+    if(localStorage.getItem("ldrC2") == null)
+    {
+      localStorage.setItem("ldrC2", "-")
+    }
+    if(localStorage.getItem("ldrN3") == null)
+    {
+      localStorage.setItem("ldrN3", "-")
+    }
+    if(localStorage.getItem("ldrS3") == null)
+    {
+      localStorage.setItem("ldrS3", "0")
+    }
+    if(localStorage.getItem("ldrC3") == null)
+    {
+      localStorage.setItem("ldrC3", "-")
+    }
     document.getElementById("name1").innerHTML = localStorage.getItem("ldrN1");
     document.getElementById("score1").innerHTML = localStorage.getItem("ldrS1");
+    document.getElementById("char1").src = localStorage.getItem("ldrC1");
 
     document.getElementById("name2").innerHTML = localStorage.getItem("ldrN2");
     document.getElementById("score2").innerHTML = localStorage.getItem("ldrS2");
+    document.getElementById("char1").src = localStorage.getItem("ldrC2");
 
     document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3");
     document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3");
+    document.getElementById("char3").src = localStorage.getItem("ldrC3");
 
     //New highest score or tied
-    if(localStorage.getItem("score") > localStorage.getItem("ldrS1"))
+    if(parseInt(localStorage.getItem("score"),10) > parseInt(localStorage.getItem("ldrS1"),10))
     {
-      document.getElementById("name2").innerHTML = localStorage.getItem("ldrN1");
-      document.getElementById("score2").innerHTML = localStorage.getItem("ldrS1");
+      /*alert(parseInt(localStorage.getItem("score"),10))
+      alert(parseInt(localStorage.getItem("ldrS1"),10))*/
 
-      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN2");
-      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS2");
+      localStorage.setItem("ldrN3", localStorage.getItem("ldrN2"))
+      localStorage.setItem("ldrS3", localStorage.getItem("ldrS2"))
+      localStorage.setItem("ldrC3", localStorage.getItem("ldrC2"))
+      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3");
+      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3");
+      document.getElementById("char3").src = localStorage.getItem("ldrC3");
+
+      localStorage.setItem("ldrN2", localStorage.getItem("ldrN1"))
+      localStorage.setItem("ldrS2", localStorage.getItem("ldrS1"))
+      localStorage.setItem("ldrC2", localStorage.getItem("ldrC1"))
+      document.getElementById("name2").innerHTML = localStorage.getItem("ldrN2");
+      document.getElementById("score2").innerHTML = localStorage.getItem("ldrS2");
+      document.getElementById("char2").src = localStorage.getItem("ldrC2");
 
       localStorage.setItem("ldrN1", localStorage.getItem("name"))
       localStorage.setItem("ldrS1", localStorage.getItem("score"))
-
+      localStorage.setItem("ldrC1", localStorage.getItem("avatar"))
       document.getElementById("name1").innerHTML = localStorage.getItem("ldrN1")
       document.getElementById("score1").innerHTML = localStorage.getItem("ldrS1")
+      document.getElementById("char1").src = localStorage.getItem("ldrC1")
     }
     //New second highest score or tied
-    else if(localStorage.getItem("score") > localStorage.getItem("ldrS2"))
+    else if(parseInt(localStorage.getItem("score"),10) > parseInt(localStorage.getItem("ldrS2"),10))
     {
-      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN2");
-      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS2");
+      /*alert(parseInt(localStorage.getItem("score"),10))
+      alert(parseInt(localStorage.getItem("ldrS2"),10))*/
+
+      localStorage.setItem("ldrN3", localStorage.getItem("ldrN2"))
+      localStorage.setItem("ldrS3", localStorage.getItem("ldrS2"))
+      localStorage.setItem("ldrC3", localStorage.getItem("ldrC2"))
+      document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3");
+      document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3");
+      document.getElementById("char3").src = localStorage.getItem("ldrC3")
 
       localStorage.setItem("ldrN2", localStorage.getItem("name"))
       localStorage.setItem("ldrS2", localStorage.getItem("score"))
-
       document.getElementById("name2").innerHTML = localStorage.getItem("ldrN2")
       document.getElementById("score2").innerHTML = localStorage.getItem("ldrS2")
+      document.getElementById("char2").src = localStorage.getItem("ldrC2")
     }
     //New third highest score or tied
-    else if(localStorage.getItem("score") > localStorage.getItem("ldrS3"))
+    else if(parseInt(localStorage.getItem("score"),10) > parseInt(localStorage.getItem("ldrS3"),10))
     {
+      /*alert(parseInt(localStorage.getItem("score"),10))
+      alert(parseInt(localStorage.getItem("ldrS3"),10))*/
+
       localStorage.setItem("ldrN3", localStorage.getItem("name"))
       localStorage.setItem("ldrS3", localStorage.getItem("score"))
-
+      localStorage.setItem("ldrC3", localStorage.getItem("avatar"))
       document.getElementById("name3").innerHTML = localStorage.getItem("ldrN3")
       document.getElementById("score3").innerHTML = localStorage.getItem("ldrS3")
+      document.getElementById("char3").src = localStorage.getItem("ldrC3")
+
     }
   </script>
 

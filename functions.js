@@ -2,13 +2,19 @@
 $(window).ready(function(){
   mySound = new sound("/Resources/Sounds/bell.mp3");
   var x = sessionStorage.getItem("gamebackground");
-  var y = sessionStorage.getItem("avatar");
+  var y = localStorage.getItem("avatar");
   if (sessionStorage.length == 0) {
     document.getElementById("container").style.backgroundImage = "url('/Resources/background.jpg')";
+    // document.getElementById("basket").style.backgroundImage = "url('/Resources/char0.png')";
+  }
+  else {
+      document.getElementById("container").style.backgroundImage = "url('"+ x + "')";
+  }
+  if (localStorage.length == 0) {
     document.getElementById("basket").style.backgroundImage = "url('/Resources/char0.png')";
   }
   else{
-    document.getElementById("container").style.backgroundImage = "url('"+ x + "')";
+    // document.getElementById("container").style.backgroundImage = "url('"+ x + "')";
     document.getElementById("basket").style.backgroundImage = "url('"+ y + "')";
   }
 });
